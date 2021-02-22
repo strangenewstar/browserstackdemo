@@ -15,6 +15,7 @@ public class DriverUtils {
      * @param url String
      */
     public static void navigateToURL(String url) {
+        System.out.println("URL: " + url);
         WebDriverThread.getDriver().get(url);
         WebDriverThread.getDriver().manage().window().setSize(getBrowserDimension());
     }
