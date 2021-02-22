@@ -18,7 +18,7 @@ public class AutomationConfiguration {
     static {
         Configurations configs = new Configurations();
         try {
-            config = configs.properties(new File("C:\\Users\\jrosen\\git\\demo\\src\\test\\resources\\config.properties"));
+            config = configs.properties(new File("./src/test/resources/config.properties"));
         } catch (ConfigurationException e) {
             throw new RuntimeException(e);
         }
