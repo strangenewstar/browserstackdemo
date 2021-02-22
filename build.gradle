@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'browserstack-demo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+    }
+    testLogging.showStandardStreams = true
+}
+
+dependencies {
+    implementation("org.testng:testng:7.0.0")
+    implementation("commons-io:commons-io:2.6")
+    implementation("commons-beanutils:commons-beanutils:1.9.4")
+    implementation("org.slf4j:slf4j-api:1.7.28")
+    implementation("org.seleniumhq.selenium:selenium-java:3.141.59")
+    implementation("org.seleniumhq.selenium:selenium-chrome-driver:3.141.59")
+    implementation("org.apache.commons:commons-compress:1.20")
+    implementation("org.apache.commons:commons-configuration2:2.6")
+    implementation("javax.transaction:jta:1.1")
+    implementation("org.hibernate:hibernate-core:5.4.10.Final")
+}
