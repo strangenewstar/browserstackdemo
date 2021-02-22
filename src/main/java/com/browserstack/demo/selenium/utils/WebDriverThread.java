@@ -21,6 +21,7 @@ public class WebDriverThread {
     });
 
     public static WebDriver getDriver() {
+        System.out.println("driver: " + driver);
         return driver.get();
     }
 
