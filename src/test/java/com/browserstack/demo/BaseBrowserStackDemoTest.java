@@ -3,16 +3,17 @@ package com.browserstack.demo;
 import com.browserstack.demo.selenium.utils.AutomationConfiguration;
 import com.browserstack.demo.selenium.utils.ConfigPropertyUtils;
 import com.browserstack.demo.selenium.utils.LoadProperties;
+import com.browserstack.demo.selenium.utils.WebDriverThread;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
-import java.io.IOException;
 
 public class BaseBrowserStackDemoTest {
     String url;
 
     @BeforeSuite(alwaysRun = true)
-    public void bestSuite() throws IOException, InstantiationException {
+    public void bestSuite() {
         LoadProperties uiProperties = new LoadProperties();
         uiProperties.loadProperties(new File("./src/test/resources/config.properties"));
         ConfigPropertyUtils.setMaxWaitTime(uiProperties.getProperty("maxWaitTime"));
@@ -22,5 +23,10 @@ public class BaseBrowserStackDemoTest {
         ConfigPropertyUtils.setBroswerWindowWidth(uiProperties.getProperty("browserWindowWidth"));
 
         url = AutomationConfiguration.getProperty("url");
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void tearDown(){
+        WebDriverThread.quit();
     }
 }
