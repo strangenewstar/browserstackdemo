@@ -18,7 +18,7 @@ public class WebDriverThread {
                 caps.setCapability("browserName", System.getenv("browserName"));
                 caps.setCapability("version", System.getenv("version"));
                 caps.setCapability("platform", System.getenv("platform"));
-                caps.setCapability("screenResolution", System.getenv("screenResolution"));
+//                caps.setCapability("screenResolution", System.getenv("screenResolution"));
                 caps.setCapability("name", System.getenv("testName")); // test name
                 caps.setCapability("build", System.getenv("buildName")); // CI/CD job or build name
                 try {
