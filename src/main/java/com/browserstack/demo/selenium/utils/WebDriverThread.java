@@ -17,7 +17,7 @@ public class WebDriverThread {
 
     private static ThreadLocal<WebDriver> driver = ThreadLocal.withInitial(() -> {
                 DesiredCapabilities caps = new DesiredCapabilities();
-                caps.setCapability("browserName", "${browser}");
+                caps.setCapability("browserName", System.getenv("browser"));
                 caps.setCapability("version", "latest");
                 caps.setCapability("platform", "Windows");
                 caps.setCapability("screenResolution", "1024x768");
